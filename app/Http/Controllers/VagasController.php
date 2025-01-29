@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ModelVagas;
 
 class VagasController extends Controller
 {
+    private $objVagas;
+
+    public function __construct() {
+        $this->objVagas = new ModelVagas();
+    }
+
     public function index()
     {
-        return view('index');
+        $vaga=$this->objVagas->all();
+        return view('index' ,compact('vaga'));
     }
 
     /**

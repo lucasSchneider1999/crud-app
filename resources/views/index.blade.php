@@ -2,6 +2,9 @@
 
 @section('content')
     <h1>Vagas</h1>
+    <a href="/">
+        <button>Cadastrar</button>
+    </a>
     <table>
   <thead>
     <tr>
@@ -14,7 +17,23 @@
     </tr>
   </thead>
   <tbody>
-  
+  @foreach($vaga as $vagas)
+    <tr>
+      <td>{{$vagas->id}}</td>
+      <td>{{$vagas->Titulo}}</td>
+      <td>{{$vagas->Cargo}}</td>
+      @if($vagas->Salario_visivel)
+        <td>{{ $vagas->Salario }}</td>
+      @else
+        <td>-</td>
+      @endif
+      <td>{{$vagas->Descricao}}</td>
+      <td>
+        <button>Editar</button>
+        <button>Eliminar</button>
+      </td>
+    </tr>
+    @endforeach()
   </tbody>
 </table>
 @endsection
