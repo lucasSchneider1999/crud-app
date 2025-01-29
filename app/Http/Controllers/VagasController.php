@@ -25,7 +25,7 @@ class VagasController extends Controller
      */
     public function create()
     {
-
+        return view('create');
     }
 
     /**
@@ -33,7 +33,31 @@ class VagasController extends Controller
      */
     public function store(Request $request)
     {
-     
+        // Validação dos campos
+        $request->validate([
+            'Titulo' => 'required|string|max:255',
+            'Cargo' => 'required|string|max:255',
+            'Salario' => 'required|numeric',
+            'Salario_visivel' => 'required|boolean',
+            'Descricao' => 'required|string',
+        ]);
+
+        // Criando a vaga
+        $cad = $this->objVagas->create([
+            'Titulo' => $request->Titulo,
+            'Cargo' => $request->Cargo,
+            'Salario' => $request->Salario,
+            'Salario_visivel' => $request->Salario_visivel,
+            'Descricao' => $request->Descricao,
+        ]);
+
+        // Redireciona se o cadastro for bem-sucedido
+        if ($cad) {
+            return redirect('vagas')->with('success', 'Vaga cadastrada com sucesso!');
+        } else {
+            return back()->with('error', 'Erro ao cadastrar vaga!');
+        }
+        
     }
 
     /**

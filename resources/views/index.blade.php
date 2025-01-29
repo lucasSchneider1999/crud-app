@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Vagas</h1>
-    <a href="/">
+    <a href="{{url('vagas/create')}}">
         <button>Cadastrar</button>
     </a>
     <table>
