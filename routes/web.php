@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VagasController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/vagas', [VagasController::class, 'index']);
+
