@@ -31,8 +31,13 @@
       <td>
         <a href="{{url("vagas/$vagas->id/edit")}}">
           <button>Editar</button>
-        </a> 
-        <button>Eliminar</button>
+        </a>
+        <!-- Formulário de Exclusão -->
+        <form action="{{ route('vagas.destroy', $vagas->id) }}" method="POST" onsubmit="return confirm('Deseja realmente deletar esta vaga?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Deletar</button>
+        </form> 
       </td>
     </tr>
     @endforeach()

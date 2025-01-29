@@ -20,17 +20,11 @@ class VagasController extends Controller
         return view('index' ,compact('vaga'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         // Validação dos campos
@@ -60,26 +54,17 @@ class VagasController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $vaga=$this->objVagas->find($id);
         return view('create', compact('vaga'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $this->objVagas->where(['id' => $id])->update([
@@ -92,11 +77,18 @@ class VagasController extends Controller
         return redirect('vagas');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $vaga = ModelVagas::find($id);
+
+        if ($vaga) {
+        
+            $vaga->delete();
+
+            return redirect('vagas');
+        } else {
+            // Caso a vaga não seja encontrada
+            return redirect('vagas');
+        }
     }
 }
