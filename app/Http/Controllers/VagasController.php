@@ -73,7 +73,8 @@ class VagasController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $vaga=$this->objVagas->find($id);
+        return view('create', compact('vaga'));
     }
 
     /**
@@ -81,7 +82,14 @@ class VagasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->objVagas->where(['id' => $id])->update([
+            'Titulo' => $request->Titulo,
+            'Cargo' => $request->Cargo,
+            'Salario' => $request->Salario,
+            'Salario_visivel' => $request->Salario_visivel,
+            'Descricao' => $request->Descricao,
+        ]);
+        return redirect('vagas');
     }
 
     /**

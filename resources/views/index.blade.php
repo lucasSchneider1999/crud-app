@@ -29,7 +29,9 @@
       @endif
       <td>{{$vagas->Descricao}}</td>
       <td>
-        <button>Editar</button>
+        <a href="{{url("vagas/$vagas->id/edit")}}">
+          <button>Editar</button>
+        </a> 
         <button>Eliminar</button>
       </td>
     </tr>
