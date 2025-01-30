@@ -1,8 +1,11 @@
 <?php
 
-//use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VagasController;
 
+Route::get('/', function () {
+    return "WEB!";
+});
 Route::get('/vagas', [VagasController::class, 'index']);
 Route::get('/vagas/create', [VagasController::class, 'create']);
 Route::post('/vagas', [VagasController::class, 'store'])->name('vagas.store');

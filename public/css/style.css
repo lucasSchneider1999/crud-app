@@ -1,0 +1,164 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.btncad {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.btncad:hover {
+    background-color:  #2ada48;
+}
+
+.btnedit {
+    background-color: #077df2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.btnedit:hover {
+    background-color: #0742f2;
+}
+
+.btndel {
+    background-color: #f80713;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.btndel:hover {
+    background-color: #ff0000;
+}
+
+.btninput {
+    background-color: #2ada48;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Espaçamento geral */
+table td, table th {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* Formulário de exclusão */
+
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input */
+input[type="text"], select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Espaço entre inputs */
+input[type="text"], select {
+    margin-bottom: 15px;
+}
+
+/* Botão de submit (modificado para o input dentro do button) */
+input[type="submit"] {
+    background-color: #2ada48;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* Parágrafo */
+p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
